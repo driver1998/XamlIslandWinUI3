@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
+		<RuntimeIdentifiers>win10-x64;win10-x86;win10-arm64</RuntimeIdentifiers>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		
+		<DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+		<UseWindowsForms>true</UseWindowsForms>
+		<UseWinUI>true</UseWinUI>
+		<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+		
+		<!-- Bootstrap WASDK at startup -->
+		<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>
+
+		<!-- HACK: Somehow this disables loading WPF related targets, avoids conflicts with the WinUI XAML compiler -->
+		<ImportFrameworkWinFXTargets>true</ImportFrameworkWinFXTargets>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000" />
+	</ItemGroup>
+
+</Project>

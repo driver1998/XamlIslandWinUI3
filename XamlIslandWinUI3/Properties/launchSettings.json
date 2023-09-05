@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "XamlIslandWinUI3": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
